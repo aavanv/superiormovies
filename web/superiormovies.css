@@ -1,0 +1,72 @@
+table {
+    border-collapse:collapse
+}
+
+.title {
+    font-family: "Arial Black", serif;
+    font-size: 3em;
+    color: darkblue;
+    background-color: cornflowerblue;
+    text-align: center;
+    vertical-align: center;
+    border-style: none
+}
+.menu {
+    font-family: "Arial Black", serif;
+    color: darkblue;
+}
+.menu:hover {
+    /*color: deepskyblue;*/
+    color: steelblue;
+}
+.menuselected {
+    font-family: "Arial Black", serif;
+    color: red;
+}
+.aboutpage,
+.homepage {
+    position: relative;
+    font-family: "Arial", serif;
+    font-weight: bold;
+    color: midnightblue;
+}
+.aboutpage::after,
+.homepage::after {
+    content: "";
+    position: absolute;
+    background: url("image/wallpaperflare.com_camera.jpg");
+    background-size: cover;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+.header {
+    /*background-color: gray;*/
+}
+.tableheader {
+    font-family: "Arial", serif;
+    font-weight: bold;
+    border-style: solid;
+    background-color: black;
+    color: white;
+    height: 30px;
+}
+.tablerow {
+    font-family: "Arial", serif;
+    border-style: solid;
+    height: 50px;
+}
+.grid {
+    border-style: none;
+}
+.button {
+    background-color: black;
+    color: white;
+    font-family: "Arial", serif;
+    font-weight: bold;
+    height: 30px;
+    width: 75px;
+}
