@@ -57,7 +57,7 @@ table {
 .tablerow {
     font-family: "Arial", serif;
     border-style: solid;
-    height: 50px;
+    font-weight: bold;
 }
 .grid {
     border-style: none;
@@ -67,6 +67,7 @@ table {
     color: white;
     font-family: "Arial", serif;
     font-weight: bold;
-    height: 30px;
-    width: 75px;
+    font-size: medium;
+    height: 50px;
+    width: 125px;
 }

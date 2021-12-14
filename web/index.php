@@ -58,12 +58,13 @@
     <div hidden id="rate_movies_page">
         <br>
         <form id="rate_movies_form" method="post" onsubmit="return saveData();" enctype="multipart/form-data">
-<!--        <form id="rate_movies_form" method="post" action="insert.php" enctype="multipart/form-data">-->
             <table style="width:100%">
                 <thead class="tableheader">
                     <tr>
-                        <th class="grid" style="width:10%"></th>
+                        <th class="grid" style="width:4%"></th>
                         <th class="grid" style="width:5%" ></th>
+                        <th class="grid" style="width:5%" ></th>
+                        <th class="grid" style="width:1%"></th>
                         <th class="grid" style="width:25%; text-align: left">Name</th>
                         <th class="grid" style="width:10%">1 Star</th>
                         <th class="grid" style="width:10%">2 Star</th>
@@ -75,7 +76,7 @@
                 </thead>
                 <tbody>
 <?php
-    $query = "select id, name from movie order by name";
+    $query = "select id, imageurl, name from movie order by name";
     $conn = init_db_connection();
     $result =  mysqli_query($conn, $query);
     if (mysqli_num_rows($result) > 0) {
@@ -83,29 +84,33 @@
         while ($data = mysqli_fetch_assoc($result)) {
 ?>
                     <tr class="tablerow">
-                        <td class="grid" style="width:10%"></td>
-                        <td class="grid" style="width:5%">
+                        <td class="grid"></td>
+                        <td class="grid">
                             <input hidden name="tableRow[<?php echo $count; ?>][id]" id="id" type="text" value="<?php echo $data['id']; ?>">
                         </td>
-                        <td class="grid" style="width:25%; text-align: left">
+                        <td class="grid" style="text-align: center">
+                            <img src="<?php echo $data['imageurl']; ?>" height="150px">
+                        </td>
+                        <td class="grid"></td>
+                        <td class="grid" style="text-align: left">
                             <span><?php echo $data['name']; ?></span>
                         </td>
-                        <td class="grid" style="width:10%; text-align: center">
+                        <td class="grid" style="text-align: center">
                             <input name="tableRow[<?php echo $count; ?>][rating]" type="radio" value="1">
                         </td>
-                        <td class="grid" style="width:10%; text-align: center">
+                        <td class="grid" style="text-align: center">
                             <input name="tableRow[<?php echo $count; ?>][rating]" type="radio" value="2">
                         </td>
-                        <td class="grid" style="width:10%; text-align: center">
+                        <td class="grid" style="text-align: center">
                             <input name="tableRow[<?php echo $count; ?>][rating]" type="radio" value="3">
                         </td>
-                        <td class="grid" style="width:10%; text-align: center">
+                        <td class="grid" style="text-align: center">
                             <input name="tableRow[<?php echo $count; ?>][rating]" type="radio" value="4">
                         </td>
-                        <td class="grid" style="width:10%; text-align: center">
+                        <td class="grid" style="text-align: center">
                             <input name="tableRow[<?php echo $count; ?>][rating]" type="radio" value="5">
                         </td>
-                        <td class="grid" style="width:10%"></td>
+                        <td class="grid"></td>
                     </tr>
 <?php
              $count++;
@@ -114,7 +119,11 @@
     close_db_connection($conn);
 ?>
                     <tr class="tablerow" style="border-style: none">
-                        <td colspan="9" style="text-align: center">
+                        <td colspan="11" style="height: 25px">
+                        </td>
+                    </tr>
+                    <tr class="tablerow" style="border-style: none">
+                        <td colspan="11" style="text-align: center">
                             <input class="button" type="submit" value="Save">
                         </td>
                     </tr>
@@ -127,7 +136,9 @@
         <table style="width:100%">
             <thead class="tableheader">
             <tr>
-                <th class="grid" style="width:20%"></th>
+                <th class="grid" style="width:14%"></th>
+                <th class="grid" style="width:5%"></th>
+                <th class="grid" style="width:1%"></th>
                 <th class="grid" style="width:25%; text-align: left">Name</th>
                 <th class="grid" style="width:10%">No. of Ratings</th>
                 <th class="grid" style="width:10%">Average Rating</th>
@@ -137,7 +148,7 @@
             <tbody>
             <?php
             $query =
-                "select M.name, count(MR.rating) as rating_count, round(avg(MR.rating), 2) as avg_rating " .
+                "select M.name, M.imageurl, count(MR.rating) as rating_count, round(avg(MR.rating), 2) as avg_rating " .
                 "from movie_rating MR " .
                 "join movie M ON MR.movie_id = M.id ".
                 "group by MR.movie_id " .
@@ -148,6 +159,10 @@
                 while ($data = mysqli_fetch_assoc($result)) {
                     ?>
                     <tr class="tablerow">
+                        <td class="grid"></td>
+                        <td class="grid" style="text-align: center">
+                            <img src="<?php echo $data['imageurl']; ?>" height="150px">
+                        </td>
                         <td class="grid"></td>
                         <td class="grid" style="text-align: left">
                             <span><?php echo $data['name']; ?></span>

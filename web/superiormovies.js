@@ -40,6 +40,7 @@ function saveData () {
 function saveSuccess(resp) {
     console.log(resp.text());
     alert("Ratings saved successfully");
+    window.location.reload();
 }
 
 function saveFail(resp) {
