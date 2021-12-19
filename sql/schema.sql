@@ -1,5 +1,7 @@
 create database superiormovies;
+
 use superiormovies;
+
 create table movie (
  id int primary key,
  name varchar(100) not null,
@@ -7,6 +9,7 @@ create table movie (
  imageurl varchar(100) not null,
  unique index sm_name_uk (name)
 );
+
 create table movie_rating (
   movie_id int not null,
   rating int not null,

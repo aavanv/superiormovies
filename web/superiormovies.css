@@ -2,15 +2,6 @@ table {
     border-collapse:collapse
 }
 
-.title {
-    font-family: "Arial Black", serif;
-    font-size: 3em;
-    color: darkblue;
-    background-color: cornflowerblue;
-    text-align: center;
-    vertical-align: center;
-    border-style: none
-}
 .menu {
     font-family: "Arial Black", serif;
     color: darkblue;
@@ -34,13 +25,13 @@ table {
 .homepage::after {
     content: "";
     position: absolute;
-    background: url("image/wallpaperflare.com_camera.jpg");
+    background: url("image/beach.jpg");
     background-size: cover;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0.5;
+    opacity: 100;
     z-index: -1;
 }
 .header {

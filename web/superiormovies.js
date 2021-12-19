@@ -14,14 +14,10 @@ function displayHome(e) {
 
 function rateMovies(e) {
     highlightMenuItem(e.id);
-
-    // TBD code to fetch movies records from database and display in the 'rate_movies_page' div
 }
 
 function viewRankings(e) {
     highlightMenuItem(e.id);
-
-    // TBD code to fetch rankings from database and display in the 'view_rankings_page' div
 }
 
 function about(e) {

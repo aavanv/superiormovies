@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,18 +8,35 @@
     <script>
         let currentSelection = "home";
     </script>
+
+    <!-- internal CSS for Title -->
+    <style>
+        .title {
+            font-family: "Arial Black", serif;
+            font-size: 3em;
+            color: darkblue;
+            background-color: cornflowerblue;
+            text-align: center;
+            vertical-align: center;
+            border-style: none
+        }
+    </style>
 </head>
 <body>
 
 <?php require_once 'connection.php';?>
 
+<!-- Page Header starts  -->
 <div class="header">
     <table style="width:100%">
+        <!-- Title  -->
         <tr class="title">
             <td colspan="9">
                 <span>Superior Movies</span>
             </td>
         </tr>
+
+        <!-- Menu Bar  -->
         <tr style="background-color: lightskyblue; height:4em">
             <td style="width:35%"></td>
             <td>
@@ -41,20 +58,37 @@
         </tr>
     </table>
 </div>
+<!-- Page Header ends  -->
+
+
 <div id="detail">
+
+    <!-- Home page code  starts -->
     <div id="home_page" class="homepage">
-        <table style="width:100%; height:82vh">
-            <tr>
-                <td style="width:50%"></td>
-                <td style="width:30%">
-                    <p>
-                        Home page content comes here
-                    </p>
-                </td>
-                <td style="width:20%"></td>
-            </tr>
-        </table>
+          <table style="width:100%;height:100vh">
+              <tr>
+                    <td style="width:10%"></td>
+                    <td style="width:80%">
+                        <span style="text-align: center;vertical-align: center">
+                            <h1 style="font-size:150px;color:black">
+
+                                Welcome to Superior Movies
+                            </h1>
+                             <h3 style="font-size:60px;color:darkblue">
+                               Authentic movie ratings that are made for you, by you.
+
+
+                            </h3>
+                        </span>
+                    </td>
+                    <td style="width:10%"></td>
+              </tr>
+         </table>
     </div>
+    <!-- Home page code  ends -->
+
+    <!-- Rate Movies page code  starts -->
+
     <div hidden id="rate_movies_page">
         <br>
         <form id="rate_movies_form" method="post" onsubmit="return saveData();" enctype="multipart/form-data">
@@ -131,6 +165,9 @@
             </table>
         </form>
     </div>
+    <!-- Rate Movies page code  ends -->
+
+    <!-- View Rankings page code  starts -->
     <div hidden id="view_rankings_page">
         <br>
         <table style="width:100%">
@@ -182,21 +219,52 @@
             ?>
             </tbody>
         </table>
-
     </div>
+    <!-- View Rankings page code  ends -->
+
+    <!-- About page code  starts -->
     <div hidden id="about_page" class="aboutpage">
         <table style="width:100%; height:82vh">
             <tr>
-                <td style="width:50%"></td>
-                <td style="width:30%">
-                    <p>
-                        About page content comes here
-                    </p>
+                <td style="width:10%"></td>
+                <td style="width:80%">
+                <span style="text-align: center;vertical-align: center">
+                       <h1 style="font-size:60px;color:black">
+                        For this website our time and dedication was
+                        placed mostly on the applications and functions that we wished to include in our current
+                        prototype of our project. Our movie rating page was made for viewers to have an authentic
+                        experience; get ratings that are not influenced by money or deals; rather, our websites
+                        pride itself in authentic movie reviews that are decided by you!
+                        </h1>
+                        <h2 style="font-size:50px;color:black">
+                        We are currently drawing up graphic designs for new features on our website that we hope to
+                        integrate in future prototypes of our movie page. With these new additions come a see movies
+                        page, where we display movies and where to watch based on genre… stay tuned!
+                        </h2>
+                        <h3 style="font-size:40px;color:#29575F;text-align: center">
+                        About the Creators
+                        </h3>
+                        <h4 style="font-size:30px;color:#29575F;text-align: left">
+                        Hi my name is Alisha Jain and I am the storyboard creator, where I created the design and
+                        background for this website! For this website, I loved created the entire design and have fun
+                        with it all!
+                        </h4>
+                        <h4 style="font-size:30px;color:#29575F;text-align: left">
+                        Hello, my name is Aavan Vadiwala, and I am the data specialist for this project! Since I love
+                        coding, I was able allow my love for coding really shine!
+                        </h4>
+                        <h4 style="font-size:30px;color:#29575F;text-align: left">
+                        Hey my name is Areeba Asaduzzaman and I was the web master, and I loved seeing the entire
+                         project come to life after weeks of hard work and putting it all together working with
+                         Aavan and Alisha!
+                        </h4>
+                 </span>
                 </td>
-                <td style="width:20%"></td>
+                <td style="width:10%"></td>
             </tr>
         </table>
     </div>
+    <!-- About page code  ends -->
 </div>
 </body>
 </html>
